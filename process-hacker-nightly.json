@@ -1,0 +1,20 @@
+{
+  "version": "3.0.3434",
+  "description": "A powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware.",
+  "license": "GPL-3.0-only",
+  "architecture": {
+    "32bit": {
+      "url": "https://ci.appveyor.com/api/buildjobs/bmdmv75jbvl9dc1e/artifacts/processhacker-3.0.3434-bin.zip",
+      "hash": "7c74700602438928088ded42d9d24b716d65e43eefcca934ac9cefc6afc5560a",
+      "extract_dir": "32bit"
+    },
+    "64bit": {
+      "url": "https://ci.appveyor.com/api/buildjobs/bmdmv75jbvl9dc1e/artifacts/processhacker-3.0.3434-bin.zip",
+      "hash": "7c74700602438928088ded42d9d24b716d65e43eefcca934ac9cefc6afc5560a",
+      "extract_dir": "64bit"
+    }
+  },
+  "homepage": "https://processhacker.sourceforge.io/",
+  "bin": ["processhacker.exe", "peview.exe"],
+  "shortcuts": [["processhacker.exe", "Process Hacker"]]
+}
