@@ -14,6 +14,7 @@
       "extract_dir": "64bit"
     }
   },
+  "persist": ["ProcessHacker.exe.settings.xml", "usernotesdb.xml"],
   "homepage": "https://processhacker.sourceforge.io/",
   "bin": ["processhacker.exe", "peview.exe"],
   "shortcuts": [["processhacker.exe", "Process Hacker"]]
