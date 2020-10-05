@@ -14,7 +14,10 @@
       "extract_dir": "64bit"
     }
   },
-  "persist": ["ProcessHacker.exe.settings.xml", "usernotesdb.xml"],
+  "pre_install": "if (Test-Path \"$persist_dir\\ProcessHacker.exe.settings.xml\") { Copy-Item \"$persist_dir\\ProcessHacker.exe.settings.xml\" \"$dir\" }",
+  "uninstaller": {
+    "script": "if (Test-Path \"$dir\\ProcessHacker.exe.settings.xml\") { Copy-Item \"$dir\\ProcessHacker.exe.settings.xml\" \"$persist_dir\" -Force }"
+  },
   "homepage": "https://processhacker.sourceforge.io/",
   "bin": ["processhacker.exe", "peview.exe"],
   "shortcuts": [["processhacker.exe", "Process Hacker"]]
