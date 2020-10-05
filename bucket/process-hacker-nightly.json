@@ -18,6 +18,10 @@
   "uninstaller": {
     "script": "if (Test-Path \"$dir\\ProcessHacker.exe.settings.xml\") { Copy-Item \"$dir\\ProcessHacker.exe.settings.xml\" \"$persist_dir\" -Force }"
   },
+  "checkver": {
+    "url": "https://processhacker.sourceforge.io/nightly.php",
+    "regex": "processhacker-([\\d.]+)-setup.exe"
+  },
   "homepage": "https://processhacker.sourceforge.io/",
   "bin": ["processhacker.exe", "peview.exe"],
   "shortcuts": [["processhacker.exe", "Process Hacker"]]
