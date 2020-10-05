@@ -1,28 +1,52 @@
 {
-  "version": "3.0.3434",
-  "description": "A powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware.",
-  "license": "GPL-3.0-only",
-  "architecture": {
-    "32bit": {
-      "url": "https://ci.appveyor.com/api/buildjobs/bmdmv75jbvl9dc1e/artifacts/processhacker-3.0.3434-bin.zip",
-      "hash": "7c74700602438928088ded42d9d24b716d65e43eefcca934ac9cefc6afc5560a",
-      "extract_dir": "32bit"
+    "version": "3.0.3434",
+    "description": "A powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware.",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "32bit": {
+            "url": "https://ci.appveyor.com/api/buildjobs/bmdmv75jbvl9dc1e/artifacts/processhacker-3.0.3434-bin.zip",
+            "hash": "7c74700602438928088ded42d9d24b716d65e43eefcca934ac9cefc6afc5560a",
+            "extract_dir": "32bit"
+        },
+        "64bit": {
+            "url": "https://ci.appveyor.com/api/buildjobs/bmdmv75jbvl9dc1e/artifacts/processhacker-3.0.3434-bin.zip",
+            "hash": "7c74700602438928088ded42d9d24b716d65e43eefcca934ac9cefc6afc5560a",
+            "extract_dir": "64bit"
+        }
     },
-    "64bit": {
-      "url": "https://ci.appveyor.com/api/buildjobs/bmdmv75jbvl9dc1e/artifacts/processhacker-3.0.3434-bin.zip",
-      "hash": "7c74700602438928088ded42d9d24b716d65e43eefcca934ac9cefc6afc5560a",
-      "extract_dir": "64bit"
-    }
-  },
-  "pre_install": "if (Test-Path \"$persist_dir\\ProcessHacker.exe.settings.xml\") { Copy-Item \"$persist_dir\\ProcessHacker.exe.settings.xml\" \"$dir\" }",
-  "uninstaller": {
-    "script": "if (Test-Path \"$dir\\ProcessHacker.exe.settings.xml\") { Copy-Item \"$dir\\ProcessHacker.exe.settings.xml\" \"$persist_dir\" -Force }"
-  },
-  "checkver": {
-    "url": "https://processhacker.sourceforge.io/nightly.php",
-    "regex": "processhacker-([\\d.]+)-setup.exe"
-  },
-  "homepage": "https://processhacker.sourceforge.io/",
-  "bin": ["processhacker.exe", "peview.exe"],
-  "shortcuts": [["processhacker.exe", "Process Hacker"]]
+    "pre_install": "if (Test-Path \"$persist_dir\\ProcessHacker.exe.settings.xml\") { Copy-Item \"$persist_dir\\ProcessHacker.exe.settings.xml\" \"$dir\" }",
+    "uninstaller": {
+        "script": "if (Test-Path \"$dir\\ProcessHacker.exe.settings.xml\") { Copy-Item \"$dir\\ProcessHacker.exe.settings.xml\" \"$persist_dir\" -Force }"
+    },
+    "checkver": {
+        "url": "https://processhacker.sourceforge.io/nightly.php",
+        "regex": "https://ci.appveyor.com/api/buildjobs/(?<job>[a-z0-9]+)/artifacts/processhacker-([\\d.]+)-bin.zip"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://ci.appveyor.com/api/buildjobs/$matchJob/artifacts/processhacker-$version-bin.zip",
+                "extract_dir": "64bit"
+            },
+            "32bit": {
+                "url": "https://ci.appveyor.com/api/buildjobs/$matchJob/artifacts/processhacker-$version-bin.zip",
+                "extract_dir": "32bit"
+            }
+        },
+        "hash": {
+            "url": "https://processhacker.sourceforge.io/nightly.php",
+            "regex": "(?s)Binaries .*?>\\(SHA2\\)</small></h5>.*?>$sha256</small></div>"
+        }
+    },
+    "homepage": "https://processhacker.sourceforge.io/",
+    "bin": [
+        "processhacker.exe",
+        "peview.exe"
+    ],
+    "shortcuts": [
+        [
+            "processhacker.exe",
+            "Process Hacker"
+        ]
+    ]
 }
