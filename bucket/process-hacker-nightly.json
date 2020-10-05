@@ -19,7 +19,8 @@
         "script": "if (Test-Path \"$dir\\ProcessHacker.exe.settings.xml\") { Copy-Item \"$dir\\ProcessHacker.exe.settings.xml\" \"$persist_dir\" -Force }"
     },
     "checkver": {
-        "url": "https://processhacker.sourceforge.io/nightly.php",
+        "url": "https://wj32.org/processhacker/nightly.php?phupdater",
+        "jsonpath": "$.bin_url",
         "regex": "https://ci.appveyor.com/api/buildjobs/(?<job>[a-z0-9]+)/artifacts/processhacker-([\\d.]+)-bin.zip"
     },
     "autoupdate": {
@@ -34,8 +35,9 @@
             }
         },
         "hash": {
-            "url": "https://processhacker.sourceforge.io/nightly.php",
-            "regex": "(?s)Binaries .*?>\\(SHA2\\)</small></h5>.*?>$sha256</small></div>"
+            "mode": "json",
+            "url": "https://wj32.org/processhacker/nightly.php?phupdater",
+            "jsonpath": "$.bin_hash"
         }
     },
     "homepage": "https://processhacker.sourceforge.io/",
