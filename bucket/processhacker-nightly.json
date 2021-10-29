@@ -4,12 +4,12 @@
     "license": "GPL-3.0-only",
     "architecture": {
         "32bit": {
-            "url": "https://ci.appveyor.com/api/buildjobs/w5s14xlhhnl9yfqn/artifacts/processhacker-3.0.4365-bin.zip",
+            "url": "https://github.com/ProcessHackerRepoTool/nightly-builds-mirror/releases/download/v3.0.4365/processhacker-build-bin.zip",
             "hash": "33a4119c9eede19aeb57795c8e4b321f2ddcd111dd5cd622b9249018c59ab9f0",
             "extract_dir": "32bit"
         },
         "64bit": {
-            "url": "https://ci.appveyor.com/api/buildjobs/w5s14xlhhnl9yfqn/artifacts/processhacker-3.0.4365-bin.zip",
+            "url": "https://github.com/ProcessHackerRepoTool/nightly-builds-mirror/releases/download/v3.0.4365/processhacker-build-bin.zip",
             "hash": "33a4119c9eede19aeb57795c8e4b321f2ddcd111dd5cd622b9249018c59ab9f0",
             "extract_dir": "64bit"
         }
@@ -19,25 +19,18 @@
         "script": "if (Test-Path \"$dir\\ProcessHacker.exe.settings.xml\") { Copy-Item \"$dir\\ProcessHacker.exe.settings.xml\" \"$persist_dir\" -Force }"
     },
     "checkver": {
-        "url": "https://wj32.org/processhacker/nightly.php?phupdater",
-        "jsonpath": "$.bin_url",
-        "regex": "https://ci.appveyor.com/api/buildjobs/(?<job>[a-z0-9]+)/artifacts/processhacker-([\\d.]+)-bin.zip"
+        "github": "https://github.com/ProcessHackerRepoTool/nightly-builds-mirror"
     },
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://ci.appveyor.com/api/buildjobs/$matchJob/artifacts/processhacker-$version-bin.zip",
+                "url": "https://github.com/ProcessHackerRepoTool/nightly-builds-mirror/releases/download/v$version/processhacker-build-bin.zip",
                 "extract_dir": "64bit"
             },
             "32bit": {
-                "url": "https://ci.appveyor.com/api/buildjobs/$matchJob/artifacts/processhacker-$version-bin.zip",
+                "url": "https://github.com/ProcessHackerRepoTool/nightly-builds-mirror/releases/download/v$version/processhacker-build-bin.zip",
                 "extract_dir": "32bit"
             }
-        },
-        "hash": {
-            "mode": "json",
-            "url": "https://wj32.org/processhacker/nightly.php?phupdater",
-            "jsonpath": "$.bin_hash"
         }
     },
     "homepage": "https://processhacker.sourceforge.io/",
