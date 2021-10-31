@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install scoop
+      - name: Install deps
         run: |
           iwr -useb get.scoop.sh | iex
           echo "$HOME\scoop\shims" >> $env:GITHUB_PATH
@@ -23,4 +23,6 @@ jobs:
       - name: Update scoops
         run: |
           pwsh .\bin\checkver.ps1 -SkipUpdated -Update
-          git diff
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
