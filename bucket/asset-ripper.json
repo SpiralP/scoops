@@ -1,23 +1,23 @@
 {
-  "version": "0.1.7.0",
-  "description": "GUI Application to work with engine assets, asset bundles, and serialized files",
-  "homepage": "https://github.com/ds5678/AssetRipper",
-  "license": "MIT",
-  "architecture": {
-    "64bit": {
-      "url": "https://github.com/ds5678/AssetRipper/releases/download/0.1.7.2/AssetRipperGUI_win64.zip",
-      "hash": "79b52a2df614511c9b8b3001653f9825d460849be7e7625077f537387dd9848d"
-    }
-  },
-  "bin": "AssetRipper.exe",
-  "checkver": {
-    "github": "https://github.com/ds5678/AssetRipper"
-  },
-  "autoupdate": {
+    "version": "0.1.7.2",
+    "description": "GUI Application to work with engine assets, asset bundles, and serialized files",
+    "homepage": "https://github.com/ds5678/AssetRipper",
+    "license": "MIT",
     "architecture": {
-      "64bit": {
-        "url": "https://github.com/ds5678/AssetRipper/releases/download/$version/AssetRipperGUI_win64.zip"
-      }
+        "64bit": {
+            "url": "https://github.com/ds5678/AssetRipper/releases/download/0.1.7.2/AssetRipperGUI_win64.zip",
+            "hash": "79b52a2df614511c9b8b3001653f9825d460849be7e7625077f537387dd9848d"
+        }
+    },
+    "bin": "AssetRipper.exe",
+    "checkver": {
+        "github": "https://github.com/ds5678/AssetRipper"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/ds5678/AssetRipper/releases/download/$version/AssetRipperGUI_win64.zip"
+            }
+        }
     }
-  }
 }
