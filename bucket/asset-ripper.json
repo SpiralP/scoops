@@ -10,6 +10,12 @@
         }
     },
     "bin": "AssetRipper.exe",
+    "shortcuts": [
+        [
+            "AssetRipper.exe",
+            "Asset Ripper"
+        ]
+    ],
     "checkver": {
         "github": "https://github.com/ds5678/AssetRipper"
     },
