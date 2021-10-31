@@ -1,0 +1,27 @@
+on:
+  push:
+  schedule:
+    - cron: "0 0 * * *"
+
+name: Auto Update
+jobs:
+  auto_update_windows:
+    name: Auto Update
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install scoop
+        run: |
+          iwr -useb get.scoop.sh | iex
+          echo "$HOME\scoop\shims" >> $env:GITHUB_PATH
+          echo "C:\ProgramData\scoop\shims" >> $env:GITHUB_PATH
+          scoop install aria2
+          scoop install hub
+
+      - name: Update scoops
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "github-action@users.noreply.github.com"
+          pwsh .\bin\auto-pr.ps1 -Push
