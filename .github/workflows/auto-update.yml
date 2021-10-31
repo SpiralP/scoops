@@ -5,17 +5,22 @@ on:
 
 name: Auto Update
 jobs:
-  auto_update:
+  auto_update_windows:
     name: Auto Update
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@main
+    runs-on: windows-latest
 
-      - name: Scoop-GithubActions
-        uses: Ash258/Scoop-GithubActions@stable
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SKIP_UPDATED: "1"
-          METHOD: request
-          SCOOP_DEBUG: true
-          UPSTREAM: SpiralP/scoops
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install scoop
+        run: |
+          iwr -useb get.scoop.sh | iex
+          echo "$HOME\scoop\shims" >> $env:GITHUB_PATH
+          echo "C:\ProgramData\scoop\shims" >> $env:GITHUB_PATH
+          scoop install aria2
+          scoop install pwsh
+
+      - name: Update scoops
+        run: |
+          pwsh .\bin\checkver.ps1 -SkipUpdated -Update
+          git diff
