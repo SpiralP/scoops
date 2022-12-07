@@ -22,7 +22,7 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/ds5678/AssetRipper/releases/download/$version/AssetRipperGUI_win64.zip"
+                "url": "https://github.com/ds5678/AssetRipper/releases/download/$version/AssetRipper_win_x64.zip"
             }
         }
     }
