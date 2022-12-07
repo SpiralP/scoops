@@ -1,12 +1,12 @@
 {
-    "version": "0.2.1.0",
+    "version": "0.2.4.2",
     "description": "GUI Application to work with engine assets, asset bundles, and serialized files",
     "homepage": "https://github.com/ds5678/AssetRipper",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/ds5678/AssetRipper/releases/download/0.2.1.0/AssetRipperGUI_win64.zip",
-            "hash": "9982938650c2e05e4726863c70216a273d9594a07d3ed788fe34efda8fd1945a"
+            "url": "https://github.com/ds5678/AssetRipper/releases/download/0.2.4.2/AssetRipper_win_x64.zip",
+            "hash": "7e1053a414b6cd0453615457bfe58c1bf6cb3ca768405f8f878219b7ddf85a4a"
         }
     },
     "bin": "AssetRipper.exe",
