@@ -1,13 +1,13 @@
 {
-    "version": "5.1.0",
+    "version": "5.1.1",
     "description": "podman",
     "homepage": "https://github.com/containers/podman",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/containers/podman/releases/download/v5.1.0/podman-remote-release-windows_amd64.zip",
-            "hash": "8e41862ebe5acaac703176d9e862600efef588976e3a40efb96e73c7198ec1e3",
-            "extract_dir": "podman-5.1.0"
+            "url": "https://github.com/containers/podman/releases/download/v5.1.1/podman-remote-release-windows_amd64.zip",
+            "hash": "fd9441cb427a9338e013b95516ce113110e22bbea9dc0876715afd8d581d519b",
+            "extract_dir": "podman-5.1.1"
         }
     },
     "bin": "podman.exe",
