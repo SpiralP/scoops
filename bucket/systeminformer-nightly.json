@@ -1,11 +1,11 @@
 {
-    "version": "3.2.25152.1910",
+    "version": "3.2.25165.2405",
     "description": "A free, powerful, multi-purpose tool that helps you monitor system resources, debug software and detect malware.",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/winsiderss/si-builds/releases/download/3.2.25152.1910/systeminformer-3.2.25152.1910-bin.zip",
-            "hash": "75610c8745bcafd12fc46e35a3fe097ae1fb517c111a56d8c1bb54a1da3a710a",
+            "url": "https://github.com/winsiderss/si-builds/releases/download/3.2.25165.2405/systeminformer-3.2.25165.2405-bin.zip",
+            "hash": "35e83fb4fc6100f559cf654980f0f858cda9267f9ce94b5d23aaca8c2c3b3da5",
             "extract_dir": "amd64"
         }
     },
